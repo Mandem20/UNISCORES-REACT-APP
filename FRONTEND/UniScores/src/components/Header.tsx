@@ -6,12 +6,12 @@ const Header = () => {
     <div className="header-container">
         <div className="logo">UNISCORES</div>
         <div className="links">
-          <Link to="">Favourites</Link>
+          <Link to="favourites">Favourites</Link>
           <Link to="">Livestream</Link>
           <Link to="">Highlights</Link>
           <Link to="">News</Link>
-          <Link to="">Login</Link>
-          <Link to="">Register</Link>
+          <Link to="login">Login</Link>
+          <Link to="signup">Register</Link>
           <Link to="">Get the app</Link>
         </div>
     </div>
