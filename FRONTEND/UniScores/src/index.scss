@@ -1,0 +1,36 @@
+input[type="date"] {
+  appearance: none;          /* Remove browser’s default styles */
+  -webkit-appearance: none;  /* Safari/Chrome */
+  -moz-appearance: none;     /* Firefox */
+
+  width: 250px;
+  padding: 10px 15px;
+  font-size: 1rem;
+  font-family: "Montserrat", sans-serif;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+
+  /* Optional shadow */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+  color: #333;
+  outline: none;
+  cursor: pointer;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+input[type="date"]:focus {
+  border: 1px solid #ff7e5f;
+  box-shadow: 0 0 6px rgba(255,126,95,0.5);
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  filter: invert(50%) sepia(80%) saturate(300%) hue-rotate(10deg);
+  opacity: 0.8;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  opacity: 1;
+}
