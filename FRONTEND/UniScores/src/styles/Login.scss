@@ -1,0 +1,45 @@
+@use '../styles/partials/mixins';
+
+.login-container {
+    width: 100%;
+    height: calc(100vh - 64px);
+    display: grid;
+    place-content: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+.card {
+    @include mixins.card;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+#email, #password {
+    @include mixins.input-style;
+}
+
+#email:hover, #password:hover {
+    @include mixins.input-style-hover;
+}
+#email:focus, #password:focus {
+    @include mixins.input-style-focus;
+}
+
+.login-btn {
+    @include mixins.login-btn
+}
+
+.with-google {
+    @include mixins.google-reg-btn;
+}
+
+.switch-register {
+    @include mixins.switch-register
+}

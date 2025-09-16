@@ -1,19 +1,29 @@
 import { Link } from "react-router-dom"
 import '../styles/Header.scss'
 import { useRef, useState } from "react"
+import { useNavigate } from "react-router-dom"
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
-  const mobileViewLinks = useRef(null);
+  const mobileViewLinksRef = useRef(null);
+  const navigate = useNavigate();
 
+  // Toggling operations 
   const toggleMenuList = () => {
     setShowMenu((prev) => !prev)
   }
 
+  // Routing operations 
+  const goToHome = () => {
+    navigate('/')
+  }
 
   return (
     <div className="header-container">
-        <div className="logo">UNISCORES</div>
+        <div 
+          className="logo"
+          onClick={goToHome}
+        >UNISCORES</div>
         <div className="links">
           <Link to="favourites">Favourites</Link>
           <Link to="">Livestream</Link>
@@ -33,7 +43,7 @@ const Header = () => {
           showMenu === true ? 
             <div 
               className="links-for-mobile"
-              ref={mobileViewLinks}
+              ref={mobileViewLinksRef}
             >
               <Link to="favourites">Favourites</Link>
               <Link to="">Livestream</Link>
