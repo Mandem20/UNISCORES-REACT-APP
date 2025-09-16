@@ -23,7 +23,7 @@ form {
     gap: .5rem;
 }
 
-#email, #password {
+#email, #password, #confirm-password {
     @include mixins.input-style;
 }
 

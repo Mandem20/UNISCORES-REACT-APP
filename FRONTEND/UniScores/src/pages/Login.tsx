@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 const Login = () => {
   const navigate = useNavigate();
-  const [formData, setFromData] = useState({
+  const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
@@ -16,9 +16,9 @@ const Login = () => {
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const name = e.target.name;
     if(name === "email") {
-      setFromData({...formData, email: e.target.value})
+      setFormData({...formData, email: e.target.value})
     } else if (name === "password") {
-      setFromData({...formData, password: e.target.value})
+      setFormData({...formData, password: e.target.value})
     }
   }
 
@@ -60,7 +60,7 @@ const Login = () => {
           <button className="with-google">Login with Google</button>
 
           <div className="switch-register">
-            <p>Already have an account?</p>
+            <p>Create an account?</p>
             <p className="signup" onClick={goToSignup}>Sign up</p>
           </div>
         </form>
