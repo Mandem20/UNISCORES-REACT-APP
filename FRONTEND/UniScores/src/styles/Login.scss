@@ -12,6 +12,8 @@ h2 {
 }
 
 .card {
+    width: 20rem;
+    min-width: 300px;
     @include mixins.card;
 }
 

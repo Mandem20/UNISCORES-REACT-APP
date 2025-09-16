@@ -1,11 +1,7 @@
 import { Link } from "react-router-dom"
-<<<<<<< HEAD
 import '../styles/Header.scss'
 import { useRef, useState } from "react"
-import { useNavigate } from "react-router-dom"
-=======
-import '../styles/Header.scss';
->>>>>>> 7e9a250315adb2b3a1331ecf25e20d2dc4183b71
+import { useNavigate } from "react-router-dom" 
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -24,7 +20,6 @@ const Header = () => {
 
   return (
     <div className="header-container">
-<<<<<<< HEAD
         <div 
           className="logo"
           onClick={goToHome}
@@ -62,41 +57,6 @@ const Header = () => {
 
         }
 
-=======
-        <span className="logo">Uniscore</span>
-        <div className="links">
-            <Link to="">
-              <div className="link-wrapper">
-                <span>Favourite</span>
-              </div>
-            </Link>
-            <Link to="">
-              <div className="link-wrapper">
-                <span>Livestream</span>
-              </div>
-            </Link>
-            <Link to="">
-              <div className="link-wrapper">
-                <span>Highlight</span>
-              </div>
-            </Link>
-            <Link to="">
-              <div className="link-wrapper">
-                <span>News</span>
-              </div>
-            </Link>
-            <Link to="">
-              <div className="link-wrapper">
-                <span>Register</span>
-              </div>
-            </Link>
-            <Link to="">
-              <div className="link-wrapper">
-                <span>Get the app</span>
-              </div>
-            </Link>
-        </div>
->>>>>>> 7e9a250315adb2b3a1331ecf25e20d2dc4183b71
     </div>
   )
 }
