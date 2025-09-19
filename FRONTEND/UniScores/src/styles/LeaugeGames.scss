@@ -1,0 +1,33 @@
+@use '../styles/partials/mixins';
+
+.leauge-games-container {
+    width: 100%;
+    height: calc(100vh - 64px);
+}
+
+.league-wrapper {
+
+}
+
+.heading {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    font-size: 1rem;
+
+    .leauge-logo {
+
+    }
+
+    .league-info {
+
+
+        .league-title {
+            font-size: 1.5rem;
+        }
+
+        .league-group {
+            font-size: .8rem;
+        }
+    }
+}

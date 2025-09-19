@@ -5,6 +5,10 @@ import Home from './pages/Home';
 import Favourites from './pages/Favourites';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
+import LeagueGames from './pages/LeagueGames';
+import News from './pages/LeagueGamesLayout/News';
+import Results from './pages/LeagueGamesLayout/Results';
+import Fixtures from './pages/LeagueGamesLayout/Fixtures';
 
 
 function App() {
@@ -17,6 +21,12 @@ function App() {
           <Route path="/favourites" element={<Favourites />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/league_games/:id" element={<LeagueGames />} >
+            <Route index element={<News />} />
+            <Route path="/league_games/:id/news" element={<News />} />
+            <Route path="/league_games/:id/results" element={<Results />} />
+            <Route path="/league_games/:id/fixtures" element={<Fixtures />} />
+          </Route>
         </Route>
       </Routes>
     </>
