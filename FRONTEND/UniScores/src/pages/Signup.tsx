@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import '../styles/Signup.scss'
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -8,33 +9,61 @@ const Signup = () => {
     password: "",
     confirm_password: "",
   })
+  const [errors, setErrors] = useState<{ [key: string]: string }>({});
 
   const goToLogin = () => {
     navigate("/login")
   }
 
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const name = e.target.name;
-    if(name === "email") {
-      setFormData({...formData, email: e.target.value})
-    } else if (name === "password") {
-      setFormData({...formData, password: e.target.value})
-    } else if (name === "confirm_password") {
-      setFormData({...formData, confirm_password: e.target.value})
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+    
+    if (errors[name as keyof typeof errors]) {
+      setErrors({
+        ...errors,
+        [name]: "", 
+      });
     }
+  }
+
+  const validate = () => {
+    let newErrors: { [key: string]: string } = {};
+
+    if (!formData.email) {
+      newErrors.email = "Email is required";
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      newErrors.email = "Email is invalid";
+    }
+
+    if (!formData.password) {
+      newErrors.password = "Password is required";
+    } else if (formData.password.length < 6) {
+      newErrors.password = "Password must be at least 6 characters";
+    }
+
+    if (!formData.confirm_password) {
+      newErrors.confirm_password = "Please confirm your password";
+    } else if (formData.confirm_password !== formData.password) {
+      newErrors.confirm_password = "Passwords do not match";
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
   }
 
   const handleSignup = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    console.log(formData)
+    if (validate()) {
+      console.log("Form submitted", formData);
+    }
   }
-
 
   return (
     <div className="login-container">
       <div className="card">
         <form>
-          <h2>Login</h2>
+          <h2>Signup</h2>
           <div className="email">
             <input 
               type="email" 
@@ -42,8 +71,9 @@ const Signup = () => {
               id="email" 
               placeholder="Email address" 
               value={formData.email}
-              onChange={(e) => handleOnChange(e)}
+              onChange={handleOnChange}
             />
+            {errors.email && <span className="error">{errors.email}</span>}
           </div>
           <div className="password">
             <input 
@@ -52,8 +82,9 @@ const Signup = () => {
               id="password" 
               placeholder="Password" 
               value={formData.password}
-              onChange={(e) => handleOnChange(e)}
+              onChange={handleOnChange}
             />
+            {errors.password && <span className="error">{errors.password}</span>}
           </div>
           <div className="password">
             <input 
@@ -62,8 +93,9 @@ const Signup = () => {
               id="confirm-password" 
               placeholder="Confirm Password" 
               value={formData.confirm_password}
-              onChange={(e) => handleOnChange(e)}
+              onChange={handleOnChange}
             />
+            {errors.confirm_password && <span className="error">{errors.confirm_password}</span>}
           </div>
           <button 
             className="login-btn"

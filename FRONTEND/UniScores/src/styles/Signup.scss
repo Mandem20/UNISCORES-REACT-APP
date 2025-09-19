@@ -1,0 +1,9 @@
+@use '../styles/partials/mixins';
+
+.error {
+    @include mixins.error-message;
+}
+
+.email, .password {
+    position: relative;
+}
