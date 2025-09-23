@@ -1,8 +1,27 @@
-import React from 'react'
+import MatchResult from '../../components/MatchResult'
+import '../../styles/LeagueGamesLayoutStyles/Results.scss'
 
 const Results = () => {
   return (
-    <div>Results</div>
+    <div>
+      <div className="all-matches">
+        <MatchResult />
+        <MatchResult />
+        <MatchResult />
+        <MatchResult />
+        <MatchResult />
+        <MatchResult />
+        <MatchResult />
+        <MatchResult />
+        <MatchResult />
+        <MatchResult />
+        <MatchResult />
+        <MatchResult />
+        <MatchResult />
+        <MatchResult />
+        <MatchResult />
+      </div>
+    </div>
   )
 }
 

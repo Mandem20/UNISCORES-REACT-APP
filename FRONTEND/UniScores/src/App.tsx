@@ -21,8 +21,7 @@ function App() {
           <Route path="/favourites" element={<Favourites />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
-          <Route path="/league_games/:id" element={<LeagueGames />} >
-            <Route index element={<News />} />
+          <Route path="/league_games/:id/" element={<LeagueGames />} >
             <Route path="/league_games/:id/news" element={<News />} />
             <Route path="/league_games/:id/results" element={<Results />} />
             <Route path="/league_games/:id/fixtures" element={<Fixtures />} />

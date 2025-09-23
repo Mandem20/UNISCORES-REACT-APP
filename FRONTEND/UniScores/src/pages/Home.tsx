@@ -6,7 +6,7 @@ const Home = () => {
 
 
     const viewAllLeaugeGames = (id: number) => {
-        navigate(`/league_games/${id}`)
+        navigate(`/league_games/${id}/news`)
     }
 
     return (
