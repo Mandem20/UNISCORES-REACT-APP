@@ -1,5 +1,5 @@
-@import '../partials/mixins';
+@use '../partials/mixins';
 
 .matchnews-container {
-    @include newsBox;
+    @include mixins.newsBox;
 }

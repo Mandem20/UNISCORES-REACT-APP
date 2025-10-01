@@ -1,7 +1,11 @@
+import MatchFixtures from "../components/MatchFixtures"
 
 const Favourites = () => {
   return (
-    <div>Favourites</div>
+    <div>
+      <MatchFixtures />
+      something here
+    </div>
   )
 }
 
