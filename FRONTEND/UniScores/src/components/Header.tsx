@@ -26,7 +26,7 @@ const Header = () => {
         >UNISCORES</div>
         <div className="links">
           <Link to="favourites">Favourites</Link>
-          <Link to="">Livestream</Link>
+          <Link to="livestream">Livestream</Link>
           <Link to="">Highlights</Link>
           <Link to="">News</Link>
           <Link to="login">Login</Link>
