@@ -6,11 +6,12 @@ import Favourites from './pages/Favourites';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import LeagueGames from './pages/LeagueGames';
-import News from './pages/LeagueGamesLayout/News';
 import Results from './pages/LeagueGamesLayout/Results';
 import Fixtures from './pages/LeagueGamesLayout/Fixtures';
 import Livestream from './pages/Livestream';
 import WatchMatch from './pages/WatchMatch';
+import AllNews from './pages/AllNews';
+import News from './pages/LeagueGamesLayout/News';
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
           <Route path="/livestream/watch-match" element={<WatchMatch />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/allnews" element={<AllNews />} />
           <Route path="/league_games/:id/" element={<LeagueGames />} >
             <Route path="/league_games/:id/news" element={<News />} />
             <Route path="/league_games/:id/results" element={<Results />} />

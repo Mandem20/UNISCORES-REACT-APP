@@ -28,7 +28,7 @@ const Header = () => {
           <Link to="favourites">Favourites</Link>
           <Link to="livestream">Livestream</Link>
           <Link to="">Highlights</Link>
-          <Link to="">News</Link>
+          <Link to="allnews">News</Link>
           <Link to="login">Login</Link>
           <Link to="signup">Register</Link>
           <Link to="">Get the app</Link>

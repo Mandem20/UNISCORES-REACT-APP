@@ -1,0 +1,12 @@
+.all-news-container {
+    display: flex;
+    justify-content: center;
+    margin: 1rem;
+}
+
+.all-news-wrapper {
+    width: 50rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
